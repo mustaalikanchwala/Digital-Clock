@@ -1,41 +1,78 @@
-*{
-    margin: 0px;
-    padding:0px;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-body{
-min-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-background: linear-gradient(#121212,rgba(183, 0, 255, 0.499));
-color: antiquewhite;
-}
-.clock-container{
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items:center;
-    border: 5px solid antiquewhite;
-    height: 400px;
-    width: 600px;
-}
-#clock{
-    width: 100%;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 8rem;
-    font-family: 'Roboto', sans-serif;
 
-}
-#date{
-    width: 100%;
-    height: 150px;
+body {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
+    background: linear-gradient(#121212, rgba(183, 0, 255, 0.499));
+    color: antiquewhite;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.5vw solid antiquewhite;
+    width: 90vw;
+    max-width: 600px;
+    min-height: 50vh;
+    padding: 2rem;
+}
+
+#clock {
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(4rem, 10vw, 6rem);
     font-family: 'Roboto', sans-serif;
+}
+
+#date {
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Media Queries for smaller screens */
+@media screen and (max-width: 600px) {
+    .clock-container {
+        width: 95vw;
+        padding: 1rem;
+        border: 2px solid antiquewhite;
+    }
+
+    #clock {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+
+    #date {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .clock-container {
+        width: 98vw;
+        padding: 0.5rem;
+    }
+
+    #clock {
+        font-size: clamp(2rem, 7vw, 3rem);
+    }
+
+    #date {
+        font-size: clamp(1rem, 3.5vw, 1.5rem);
+    }
 }
